@@ -1,0 +1,293 @@
+{
+  "COLLECTION":{
+        "label": "CAPES - Programas",
+        /* "omite_secoes": ["refine", "documentos", "related_collections" ,"docs_snippet","pivot_table","boxplot", "gather_nodes"], */
+        "omite_secoes": ["refine", "documentos", "related_collections" ,"pivot_table", "gather_nodes","boxplot","docs_snippet"],
+        "campo_dinamico_busca": "cross_collection_caged_programas"
+  },
+
+  "FACETS":[
+            {"groupBy": {"id": "sobre", "label": "Sobre o ano base", "order": 1},
+             "facetGroup": [
+                 {"label": "", "render": "barChart_1",
+                  "facets": [{"chave": "AN_BASE_facet", "label": "Ano de referência da Coleta de Dados"}]}
+
+             ]},
+
+             {"groupBy": {"id": "ident_prog", "label": "Identificação do Programa", "order": 2},
+              "facetGroup": [
+                  {"label": "", "render": "barChart_1",
+                  "facets": [{"chave": "CD_PROGRAMA_IES", "label": "Código do Programa de Pós-Graduação da IES"}]}
+                  /* {"label": "", "render": "barChart_1",
+                  "facets": [{"chave": "NM_PROGRAMA_IES", "label": "Nome do Programa de Pós-Graduação da IES"}]},
+                  */
+              ]},
+
+           {"groupBy": {"id": "situacao_programa", "label": "Situação do Programa", "order": 3},
+            "facetGroup": [
+
+                {"label": "", "render": "halfPieChart", "facets": [{"chave": "DS_SITUACAO_PROGRAMA", "label": "Situação da Atividade do Programa"}]},
+                {"label": "", "render": "barChart_1",
+                "facets": [{"chave": "DT_SITUACAO_PROGRAMA_facet", "label": "Data da Situação de Atividade do Programa"}]}
+
+            ]},
+
+            {"groupBy": {"id": "caract_programa", "label": "Características do Programa", "order": 4},
+             "facetGroup": [
+                 /* {"label": "", "render": "barChart_1",
+                 "facets": [{"chave": "NM_MODALIDADE_PROGRAMA", "label": "Modalidade do programa"}]}, */
+                 {"label": "", "render": "halfPieChart", "facets": [{"chave": "NM_MODALIDADE_PROGRAMA", "label": "Modalidade do programa"}]}
+                 {"label": "", "render": "barChart_1",
+                 "facets": [{"chave": "NM_GRAU_PROGRAMA", "label": "Grau do programa"}]},
+                 {"label": "", "render": "halfPieChart", "facets": [{"chave": "IN_REDE", "label": "Atividade do Curso em Rede"}]},
+                 {"label": "", "render": "barChart_1",
+                 "facets": [{"chave": "SG_ENTIDADE_ENSINO_REDE", "label": "Sigla de Entidade de Ensino em Rede"}]},
+                 {"label": "", "render": "barChart_1",
+                 "facets": [{"chave": "ANO_INICIO_PROGRAMA_facet", "label": "Ano de Início do Programa"}]},
+                 {"label": "", "render": "barChart_1",
+                 "facets": [{"chave": "AN_INICIO_CURSO", "label": "Ano de Início do Curso"}]}
+
+
+             ]},
+             {"groupBy": {"id": "aval_programa", "label": "Avaliação do Programa", "order": 5},
+              "facetGroup": [
+
+                  {"label": "", "render": "barChart_1",
+                  "facets": [{"chave": "CD_CONCEITO_PROGRAMA", "label": "Conceito do Programa de Pós-Graduação da IES"}]}
+
+              ]},
+              {"groupBy": {"id": "a_conhec_programa", "label": "Área do conhecimento do Programa", "order": 6},
+               "facetGroup": [
+                   {"label": "", "render": "barChart_1",
+                   "facets": [{"chave": "NM_GRANDE_AREA_CONHECIMENTO", "label": "Grande Área do Conhecimento do Programa "}]},
+                   {"label": "", "render": "barChart_1",
+                   "facets": [{"chave": "NM_AREA_CONHECIMENTO", "label": "Área do Conhecimento do Programa "}]}
+                   /* {"label": "", "render": "barChart_1",
+                   "facets": [{"chave": "AREA_CONHECIMENTO_facet", "label": "Área do Conhecimento do Programa"}]} */
+
+               ]},
+               {"groupBy": {"id": "a_aval_programa", "label": "Área de avaliação a qual o programa está vinculado", "order": 7},
+                "facetGroup": [
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_AREA_AVALIACAO", "label": "Nome da Área de Avaliação a qual o programa está vinculado"}]}
+
+                ]},
+                {"groupBy": {"id": "info_instituicoes", "label": "Informações sobre a Instituição a qual está vinculado o programa", "order": 8},
+                 "facetGroup": [
+                    {"label": "", "render": "barChart_1",
+                      "facets": [{"chave": "NM_INST_FapespGei", "label": "Nome da instituição(Fapesp-Gei)"}]},
+                    {"label": "", "render": "barChart_1",
+                      "facets": [{"chave": "SG_ENTIDADE_ENSINO", "label": "Sigla da Instituição de Ensino"}]},
+                    {"label": "", "render": "barChart_1",
+                      "facets": [{"chave": "NM_ENTIDADE_ENSINO", "label": "Nome da Instituição de Ensino"}]},
+                    {"label": "", "render": "barChart_1",
+                      "facets": [{"chave": "cat_insti", "label": "Tipo de Instituição(Fapesp-Gei)"}]},
+                    {"label": "", "render": "barChart_1",
+                      "facets": [{"chave": "CS_STATUS_JURIDICO", "label": "Status Jurídico(Capes)"}]},
+                    {"label": "", "render": "barChart_1",
+                      "facets": [{"chave": "DS_DEPENDENCIA_ADMINISTRATIVA", "label": "Dependência Administrativa(Capes)"}]},
+                    {"label": "", "render": "barChart_1",
+                      "facets": [{"chave": "DS_ORGANIZACAO_ACADEMICA_Fapesp", "label": "Organização Acadêmica(Fapesp-GEI)"}]}
+
+                 ]},
+                {"groupBy": {"id": "geo_prog", "label": "Informações sobre a localização da Instituição a qual está Vinculado o Programa", "order": 9},
+                "facetGroup": [
+                    /* {"label": "", "render": "barChart_1",
+                     "facets": [{"chave": "NM_REGIAO_facet", "label": "Região Geográfica onde se localiza a Instituição do Programa"}]} */
+                     {"label": "", "render": "barChart_1",
+                      "facets": [{"chave": "NM_REGIAO", "label": "Região Geográfica onde se localiza a Instituição do Programa"}]},
+                      {"label": "", "render": "barChart_1",
+                       "facets": [{"chave": "SG_UF_PROGRAMA", "label": "UF onde se localiza a Instituição do Programa"}]},
+                       {"label": "", "render": "barChart_1",
+                        "facets": [{"chave": "NM_MUNICIPIO_PROGRAMA_IES", "label": "Município onde se localiza a Instituição do Programa"}]}
+                ]},
+
+                {"groupBy": {"id": "cad_ies", "label": "Cadastro IES CAPES", "order": 10},
+                "facetGroup": [
+                    {"label": "", "render": "barChart_1",
+                     "facets": [{"chave": "SG_ENTIDADE_ENSINO_Capes", "label": "Sigla da entidade de ensino CAPES"}]},
+                     {"label": "", "render": "barChart_1",
+                      "facets": [{"chave": "NM_ENTIDADE_ENSINO_Capes", "label": "Nome da entidade de ensino CAPES"}]},
+                      {"label": "", "render": "barChart_1",
+                       "facets": [{"chave": "Codigo_GEI", "label": "Código do GEI"}]},
+                       /*
+                      {"label": "", "render": "barChart_1",
+                       "facets": [{"chave": "Codigo_do_Tipo_de_Instituicao_", "label": "Código do tipo de institução"}]},
+                      {"label": "", "render": "barChart_1",
+                       "facets": [{"chave": "Codigo_Natureza_Juridica_-_GEI", "label": "Código da natureza jurídica do GEI"}]},
+
+                      {"label": "", "render": "barChart_1",
+                       "facets": [{"chave": "Codigo_Mantenedora", "label": "Código da Mantenedora"}]},
+                        */
+                      {"label": "", "render": "barChart_1",
+                       "facets": [{"chave": "SG_ENTIDADE_ENSINO_GEI", "label": "Sigla da entidade de ensino do GEI"}]},
+                      {"label": "", "render": "barChart_1",
+                       "facets": [{"chave": "NM_ENTIDADE_ENSINO_GEI", "label": "Nome da entidade de ensino do GEI"}]},
+                      {"label": "", "render": "barChart_1",
+                       "facets": [{"chave": "Tipo_de_Instituicao_", "label": "Tipo de instituição"}]},
+                      {"label": "", "render": "barChart_1",
+                       "facets": [{"chave": "Nome_Natureza_Juridica_-_GEI", "label": "Nome da natureza jurídica do GEI"}]},
+                      {"label": "", "render": "barChart_1",
+                       "facets": [{"chave": "DS_ORGANIZACAO_ACADEMICA_-_GEI", "label": "Descrição da organização acadêmcia do GEI"}]},
+                      {"label": "", "render": "barChart_1",
+                       "facets": [{"chave": "Nome_Mantenedora", "label": "Nome da Mantenedora"}]}
+
+                ]}
+
+    ],
+
+    "OUTCOMES": [
+        {"label": "Total Programas", "facet": {"id": ["*"]}, "docs": {}, "type": ["main"], "order": 1}
+
+    ],
+
+    "EXPORT_DATA":{
+      //"campos do solr que irao ser exportados em arquivo, fields devem ser docvalues"
+      "export_fields" : ["AN_BASE",
+            "NM_GRANDE_AREA_CONHECIMENTO",
+            "NM_AREA_CONHECIMENTO",
+            "NM_SUBAREA_CONHECIMENTO",
+            "NM_ESPECIALIDADE",
+            "CD_AREA_AVALIACAO",
+            "NM_AREA_AVALIACAO",
+            "SG_ENTIDADE_ENSINO",
+            "NM_ENTIDADE_ENSINO",
+            "CS_STATUS_JURIDICO",
+            "DS_DEPENDENCIA_ADMINISTRATIVA",
+            "DS_ORGANIZACAO_ACADEMICA",
+            "NM_REGIAO",
+            "NM_MUNICIPIO_PROGRAMA_IES",
+            "NM_MODALIDADE_PROGRAMA",
+            "CD_PROGRAMA_IES",
+            "NM_PROGRAMA_IES",
+            "NM_PROGRAMA_IDIOMA",
+            "SG_UF_PROGRAMA",
+            "NM_GRAU_PROGRAMA",
+            "CD_CONCEITO_PROGRAMA",
+            "ANO_INICIO_PROGRAMA",
+            "AN_INICIO_CURSO",
+            "IN_REDE",
+            "SG_ENTIDADE_ENSINO_REDE",
+            "DS_SITUACAO_PROGRAMA",
+            "DT_SITUACAO_PROGRAMA",
+            "ID_ADD_FOTO_PROGRAMA_IES",
+            "ID_ADD_FOTO_PROGRAMA",
+            "DS_CLIENTELA_QUADRIENAL_2017",
+            "SG_ENTIDADE_ENSINO_Capes",
+            "NM_ENTIDADE_ENSINO_Capes",
+            "Codigo_GEI",
+            "SG_ENTIDADE_ENSINO_GEI",
+            "NM_ENTIDADE_ENSINO_GEI",
+            "Codigo_do_Tipo_de_Instituicao_",
+            "Tipo_de_Instituicao_",
+            "Codigo_Natureza_Juridica_-_GEI",
+            "Nome_Natureza_Juridica_-_GEI",
+            "CD_ORGANIZACAO_ACADEMICA_-_GEI",
+            "DS_ORGANIZACAO_ACADEMICA_-_GEI",
+            "Codigo_Mantenedora",
+            "Nome_Mantenedora"
+            ],
+      //"campo usado para ordenar resultados"
+      "export_sort_by" : "AN_BASE" ,
+      //"campo usado para definir operador de ordenação"
+      "export_sort_op" : "desc",
+      //"limita numera maximo de documentos a serem exportados"
+        "max_rows" : 100000,
+      // "Caso haja um unico campo pre-gerado para relatorio com todos os dados em formato csv, indicar o nome do campo."
+      "report_field" : "",
+      // "Caso seja determinado um campo pre-gerado acima, pode-se listar o nome das colunas. Caso contrario as colunas irao sem nome."
+      "column_names": [],
+
+    // "Colunas extras para o caso de algum controle de acesso etc."
+    "extra_column_names" :[]
+    },
+
+
+  "SANKEY_CHART":{
+      "default_level_1": {"value": "NM_REGIAO", "label": "Região do Programa"},
+        "default_level_2": {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da IES"},
+        "options": [{"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da IES"},
+                    {"value": "NM_REGIAO", "label": "Região do Programa"}
+
+        ]
+  },
+
+  "BUBBLE_CHART": {
+      "default_level_1": {"value": "NM_REGIAO", "label": "Região do Programa"},
+        "default_level_2": {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da IES"},
+        "options": [{"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da IES"},
+                    {"value": "NM_REGIAO", "label": "Região do Programa"}
+
+        ]
+  },
+
+  "WORDCLOUD_CHART":{
+      "single_facet": {"value": "PROGRAMA_IES_nuvem_palavras", "label": "Programa IES PT"},
+        "options": [
+            {"value": "PROGRAMA_IES_nuvem_palavras", "label": "Programa IES PT"},
+            {"value": "PROGRAMA_IDIOMA_nuvem_palavras", "label": "Programa idioma EN"}
+
+          ]
+  },
+
+    "MULTILEVEL_BARCHART_1":{
+        "default_level_1": "NM_REGIAO",
+        "default_level_2": "CS_STATUS_JURIDICO",
+        "y_axis": [{"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da IES"},
+                    {"value": "NM_REGIAO", "label": "Região do Programa"},
+                    {"value": "ANO_INICIO_PROGRAMA", "label": "Ano de início do Programa"},
+                    {"value": "AN_INICIO_CURSO", "label": "Ano de início do Curso"}
+        ],
+        "y_stratification": [{"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da IES"},
+                    {"value": "NM_REGIAO", "label": "Região do Programa"},
+                    {"value": "SG_ENTIDADE_ENSINO", "label": "Entidade de Ensino"},
+                    {"value": "ANO_INICIO_PROGRAMA", "label": "Ano de início do Programa"},
+                    {"value": "AN_INICIO_CURSO", "label": "Ano de início do Curso"}
+        ]
+    },
+    "QUERY_BUILDER":{
+          "plugins" : ["bt-tooltip-errors"],
+          "filters" : [
+            {
+
+              "get_from_solr_field": "_text_",
+              "label": "Busca textual",
+              "operators": ["contains", "not_contains"],
+              "input": "text",
+              "type": "string"
+            },
+            {
+              "get_from_solr_field": "PROGRAMA_IES_busca",
+              "label": "Programa IES",
+              "operators": ["equal", "not_equal"],
+              "input": "autocomplete",
+              "solr_params": {
+                "q" : "*:*",
+                "fl" : "*",
+                "rows": "20",
+                "field": "PROGRAMA_IES_busca",
+                "facet_field" : "NM_PROGRAMA_IES_exact"
+
+               } ,
+              "type": "string"
+          },
+
+        {
+          "get_from_solr_field": "ID_PESSOA_busca",
+          "label": "Programa Idioma EN",
+          "operators": ["equal", "not_equal"],
+          "input": "autocomplete",
+          "solr_params": {
+            "q" : "*:*",
+            "fl" : "*",
+            "rows": "20",
+            "field": "ID_PESSOA_busca",
+            "facet_field" : "ID_PESSOA_busca_exact"
+
+           } ,
+          "type": "string"
+      }
+
+      ]
+    }
+}

@@ -1,0 +1,422 @@
+{
+  "COLLECTION":{
+        "label": "CAPES - Discentes",
+        /* "omite_secoes": ["refine", "busca", "documentos", "related_collections" ,"docs_snippet","pivot_table", "wordcloud","boxplot", "gather_nodes"], */
+        "omite_secoes": ["refine", "documentos", "related_collections" ,"pivot_table", "gather_nodes","boxplot","docs_snippet"],
+        "campo_dinamico_busca": "cross_collection_caged_discentes"
+  },
+
+  "FACETS":[
+            {"groupBy": {"id": "sobre", "label": "Sobre o ano base", "order": 1},
+             "facetGroup": [
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "AN_BASE_facet", "label": "Ano de referência da coleta de dados"}]}
+             ]},
+             /* {"groupBy": {"id": "id_discente", "label": "Identificação do Discente", "order": 2},
+              "facetGroup": [
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "ID_PESSOA", "label": "Código de Identificação da Pessoa"}]}
+              ]}, */
+              {"groupBy": {"id": "id_matricula", "label": "Informações da Matrícula", "order": 3},
+               "facetGroup": [
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "SituacaoDiscente", "label": "Situação do Discente"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "IngressanteAno", "label": "Situação do Discente como Ingressante no Ano de Referência"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "GrauAcademico", "label": "Grau Acadêmico que o Discente está Vinculado"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "DT_SITUACAO_DISCENTE_facet", "label": "Data da Situacao do Discente"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "DT_MATRICULA_DISCENTE_facet", "label": "Data de Matrícula do Discente"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "QT_MES_TITULACAO", "label": "Quantidade de Meses para a Titulação do Discente"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "Casos_Excluidos_GeoCapes", "label": "Discentes Matriculados em Programa(Geocapes exclui os casos)"}]}
+               ]},
+               {"groupBy": {"id": "atrib_pessoal_discente", "label": "Atributos Pessoais do Discente", "order": 4},
+                "facetGroup": [
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "Genero", "label": "Sexo do Discente"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "idade_order", "label": "Faixa Etária do Discente"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "DS_TIPO_NACIONALIDADE_DISCENTE", "label": "Nacionalidade do Discente"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_PAIS_NACIONALIDADE_DISCENTE", "label": "País de Nacionalidade do Discente"}]}
+                ]},
+
+                {"groupBy": {"id": "info_institu_vinc_prog", "label": "Informações Sobre a Instituição a Qual está Vinculado o Programa", "order": 5},
+                 "facetGroup": [
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "SG_ENTIDADE_ENSINO_Capes", "label": "Sigla da instituição a qual o programa de pós-graduação está vinculado (Capes)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_ENTIDADE_ENSINO_Capes", "label": "Nome da instituição a qual o programa de pós-graduação está vinculado (Capes)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "SG_INST_GEI", "label": "Sigla da Instituição a qual o Programa de Pós-Graduação está Vinculado(Fapesp-Gei)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_INST_GEI", "label": "Nome da Instituição a qual o Programa de Pós-Graduação está Vinculado(Fapesp-Gei)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "cat_insti", "label": "Tipo de Instituição(Fapesp-Gei)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "CS_STATUS_JURIDICO", "label": "Status Jurídico da Instituição a qual o Programa de Pós-Graduação está Vinculado(Capes)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "DS_DEPENDENCIA_ADMINISTRATIVA", "label": "Dependência Administrativa da Instituição a qual o Programa de Pós-Graduação está Vinculado(Capes)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "CS_Natureza_Juridica", "label": "Natureza jurídica da instituição a qual o programa de pós-graduação está vinculado(Fapesp-Gei)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "DS_ORGANIZACAO_ACADEMICA_Fapesp", "label": "Organização acadêmica da instituição a qual o programa de pós-graduação está vinculado(Fapesp-Gei)"}]}
+
+                 ]},
+
+                 {"groupBy": {"id": "info_loc_Inst_Vinc_prog", "label": "Informações sobre a Localização da Instituição a qual está Vinculado o Programa", "order": 6},
+                  "facetGroup": [
+                    /* {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_REGIAO_facet", "label": "Região Geográfica onde se Localiza a Instituição a qual o Programa de Pós-Graduação está Vinculado"}]}, */
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_REGIAO", "label": "Região Geográfica onde se Localiza a Instituição a qual o Programa de Pós-Graduação está Vinculado"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "SG_UF_PROGRAMA", "label": "Unidade da Federação onde se Localiza a Instituição a qual o Programa de Pós-Graduação está Vinculado"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_MUNICIPIO_PROGRAMA_IES", "label": "Município onde se Localiza a Instituição a qual o Programa de Pós-Graduação está Vinculado"}]}
+                  ]},
+
+                  {"groupBy": {"id": "info_sobre_prog", "label": "Informações sobre o programa", "order": 7},
+                   "facetGroup": [
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "CD_PROGRAMA_IES", "label": "Código do Programa de Pós-Graduação"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_PROGRAMA_IES", "label":"Município onde se Localiza a Instituição a qual o Programa de Pós-Graduação está Vinculado"}]},
+                    /* {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "AREA_CONHECIMENTO_facet", "label": "Nome da Área do Conhecimento"}]}, */
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_GRANDE_AREA_CONHECIMENTO", "label": "Grande Área do Conhecimento do Programa de Pós-Graduação"}]},
+                    {"label": "", "render": "barChart_1",
+                        "facets": [{"chave": "NM_AREA_CONHECIMENTO", "label": "Nome da Área do Conhecimento"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_AREA_AVALIACAO", "label": "Área de Avaliação do programa de Pós-Graduação"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "CD_CONCEITO_PROGRAMA", "label": "Conceito do Programa no qual o Discente está Vinculado"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "CD_CONCEITO_CURSO", "label": "Conceito do Curso no qual o Discente está Vinculado"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_MODALIDADE_PROGRAMA", "label": "Modalidade do Programa de Pós-Graduação"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_GRAU_PROGRAMA", "label": "Grau do Programa de Pós-Graduação"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "IN_REDE", "label": "Atividade do Curso em Rede"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "DS_SITUACAO_PROGRAMA", "label": "Situação de Atividade do Programa"}]}
+
+                   ]}
+
+                   /* {"groupBy": {"id": "info_sobre_tese", "label": "Informações sobre a Tese", "order": 8},
+                    "facetGroup": [
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_TESE_DISSERTACAO", "label": "Título da Tese ou da Dissertação do Discente"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_ORIENTADOR", "label": "Nome do Orientador do Discente"}]}
+                    ]} */
+
+    ],
+
+    "OUTCOMES": [
+        {"label": "Total de discentes", "facet": {"id": ["*"]}, "docs": {}, "type": ["main"], "order": 1}
+
+    ],
+
+    "EXPORT_DATA":{
+      //"campos do solr que irao ser exportados em arquivo, fields devem ser docvalues"
+      "export_fields" : ["AN_BASE",
+            "NM_GRANDE_AREA_CONHECIMENTO",
+            "CD_AREA_AVALIACAO",
+            "NM_AREA_AVALIACAO",
+            "SG_ENTIDADE_ENSINO",
+            "NM_ENTIDADE_ENSINO",
+            "CS_STATUS_JURIDICO",
+            "DS_DEPENDENCIA_ADMINISTRATIVA",
+            "NM_MODALIDADE_PROGRAMA",
+            "NM_GRAU_PROGRAMA",
+            "CD_PROGRAMA_IES",
+            "NM_PROGRAMA_IES",
+            "NM_REGIAO",
+            "SG_UF_PROGRAMA",
+            "NM_MUNICIPIO_PROGRAMA_IES",
+            "CD_CONCEITO_PROGRAMA",
+            "CD_CONCEITO_CURSO",
+            "ID_PESSOA",
+            "NR_DOCUMENTO_DISCENTE",
+            "TP_DOCUMENTO_DISCENTE",
+            "NM_DISCENTE",
+            "NM_PAIS_NACIONALIDADE_DISCENTE",
+            "DS_TIPO_NACIONALIDADE_DISCENTE",
+            "TP_SEXO_DISCENTE",
+            "DS_FAIXA_ETARIA",
+            "DS_GRAU_ACADEMICO_DISCENTE",
+            "ST_INGRESSANTE",
+            "NM_SITUACAO_DISCENTE",
+            "DT_MATRICULA_DISCENTE",
+            "DT_SITUACAO_DISCENTE",
+            "QT_MES_TITULACAO",
+            "NM_ORIENTADOR",
+            "ID_ADD_FOTO_PROGRAMA",
+            "ID_ADD_FOTO_PROGRAMA_IES",
+            "NM_AREA_CONHECIMENTO",
+            "NM_SUBAREA_CONHECIMENTO",
+            "NM_ESPECIALIDADE",
+            "DS_ORGANIZACAO_ACADEMICA",
+            "NM_PROGRAMA_IDIOMA",
+            "ANO_INICIO_PROGRAMA",
+            "AN_INICIO_CURSO",
+            "IN_REDE",
+            "SG_ENTIDADE_ENSINO_REDE",
+            "DS_SITUACAO_PROGRAMA",
+            "DT_SITUACAO_PROGRAMA",
+            "DS_CLIENTELA_QUADRIENAL_2017",
+            "NM_AREA_BASICA",
+            "SG_ENTIDADE_ENSINO_Capes",
+            "NM_ENTIDADE_ENSINO_Capes",
+            "Codigo_GEI",
+            "SG_ENTIDADE_ENSINO_GEI",
+            "NM_ENTIDADE_ENSINO_GEI",
+            "Codigo_do_Tipo_de_Instituicao",
+            "Tipo_de_Instituicao",
+            "Codigo_Natureza_Juridica-GEI",
+            "Nome_Natureza_Juridica-GEI",
+            "CD_ORGANIZACAO_ACADEMICA-GEI",
+            "DS_ORGANIZACAO_ACADEMICA-GEI",
+            "CD_Mantenedora",
+            "Nome_Mantenedora"
+         ],
+      //"campo usado para ordenar resultados"
+      "export_sort_by" : "AN_BASE" ,
+      //"campo usado para definir operador de ordenação"
+      "export_sort_op" : "desc",
+      //"limita numera maximo de documentos a serem exportados"
+        "max_rows" : 100000,
+      // "Caso haja um unico campo pre-gerado para relatorio com todos os dados em formato csv, indicar o nome do campo."
+      "report_field" : "",
+      // "Caso seja determinado um campo pre-gerado acima, pode-se listar o nome das colunas. Caso contrario as colunas irao sem nome."
+      "column_names": [],
+
+    // "Colunas extras para o caso de algum controle de acesso etc."
+    "extra_column_names" :[]
+    },
+
+   "SANKEY_CHART":{ /* cluster graph */
+      "default_level_1": {"value": "AN_BASE", "label": "Ano Base"},
+        "default_level_2": {"value": "NM_GRAU_PROGRAMA", "label": "Grau do programa"},
+        //"default_level_3": {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da IES"},
+        "options": [
+                    {"value": "Genero", "label": "Sexo"},
+                    {"value": "Idade", "label": "Faixa Etária"},
+                    {"value": "GrauAcademico", "label": "Grau Acadêmico"},
+                    {"value": "AN_BASE", "label": "Ano Base"},
+                    {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da IES"},
+                    {"value": "NM_GRAU_PROGRAMA", "label": "Grau do programa"},
+                    {"value": "NM_REGIAO", "label": "Região do Programa"},
+                    {"value": "NM_GRANDE_AREA_CONHECIMENTO", "label": "Grande área do conhecimento"},
+                    {"value": "SG_UF_PROGRAMA", "label": "UF do Programa"},
+                    {"value": "CD_CONCEITO_PROGRAMA", "label": "Conceito do Programa"},
+                    {"value": "CD_CONCEITO_CURSO", "label": "Conceito do Curso"}
+
+                ]
+  },
+
+  "BUBBLE_CHART": {
+      "default_level_1": {"value": "NM_REGIAO", "label": "Região do Programa"},
+        "default_level_2": {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da IES"},
+        "default_level_3": {"value": "DS_FAIXA_ETARIA", "label": "Faixa Etária"},
+        "options": [
+                    {"value": "Genero", "label": "Sexo"},
+                    {"value": "Idade", "label": "Faixa Etária"},
+                    {"value": "GrauAcademico", "label": "Grau Acadêmico"},
+                    {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da IES"},
+                    {"value": "NM_GRAU_PROGRAMA", "label": "Grau do programa"},
+                    {"value": "NM_REGIAO", "label": "Região do Programa"},
+                    {"value": "NM_GRANDE_AREA_CONHECIMENTO", "label": "Grande área do conhecimento"},
+                    {"value": "SG_UF_PROGRAMA", "label": "UF do Programa"},
+                    {"value": "CD_CONCEITO_PROGRAMA", "label": "Conceito do Programa"},
+                    {"value": "CD_CONCEITO_CURSO", "label": "Conceito do Curso"}
+
+                    ]
+  },
+
+ /* "BOXPLOT_CHART":{
+        "default_level_1": {"value": "NM_REGIAO", "label": "Região do Programa"},
+        "default_level_2": {"value": "V8005", "label": "Idade"},
+        "options_x": [
+            {"value": "NM_REGIAO", "label": "Região do Programa"}
+        ],
+        "options_y": [
+            {"value": "V8005", "label": "Idade"}
+        ]
+  }, */
+
+    "WORDCLOUD_CHART":{
+        "single_facet": {"value": "PROGRAMA_IES_nuvem_palavras", "label": "Programa IES PT"},
+          "options": [
+              {"value": "PROGRAMA_IES_nuvem_palavras", "label": "Programa IES PT"},
+              {"value": "TESE_DISSERTACAO_nuvem_palavras", "label": "Dissertação"},
+              {"value": "PROGRAMA_IDIOMA_nuvem_palavras", "label": "Programa idioma EN"},
+              {"value": "ID_PESSOA_nuvem_palavras", "label": "Cod Id Pessoa"},
+              {"value": "NM_ORIENTADOR_nuvem_palavras", "label": "Nome Orientador"},
+              {"value": "CD_PROGRAMA_IES_nuvem_palavras", "label": "Cod Programa Pós"}
+
+            ]
+    },
+
+    "MULTILEVEL_BARCHART_1":{/* stacked bar */
+        "default_level_1": "AN_BASE",
+        "default_level_2": "AN_BASE",
+
+        "y_axis": [{"value": "AN_BASE", "label": "Ano Base"},
+                    {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da IES"},
+                    {"value": "NM_GRAU_PROGRAMA", "label": "Grau do programa"},
+                    {"value": "NM_REGIAO", "label": "Região do Programa"},
+                    {"value": "NM_AREA_CONHECIMENTO", "label": "Área do conhecimento"}
+
+                ],
+        "y_stratification": [{"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da IES"},
+                    {"value": "Genero", "label": "Sexo"},
+                    {"value": "Idade", "label": "Faixa Etária"},
+                    {"value": "GrauAcademico", "label": "Grau Acadêmico"},
+                    {"value": "NM_GRAU_PROGRAMA", "label": "Grau do programa"},
+                    {"value": "NM_REGIAO", "label": "Região do Programa"},
+                    {"value": "NM_AREA_CONHECIMENTO", "label": "Área do conhecimento"},
+                    {"value": "CD_CONCEITO_PROGRAMA", "label": "Conceito do Programa"},
+                    {"value": "CD_CONCEITO_CURSO", "label": "Conceito do Curso"}
+                ]
+    },
+    "QUERY_BUILDER":{
+          "plugins" : ["bt-tooltip-errors"],
+          "filters" : [
+            {
+
+              "get_from_solr_field": "_text_",
+              "label": "Busca textual",
+              "operators": ["contains", "not_contains"],
+              "input": "text",
+              "type": "string"
+            },
+            {
+              // campo pesquisado no solr pelo getData(), manter mesmo valor de facet_field quando usado autocomplete
+              "get_from_solr_field": "TESE_DISSERTACAO_busca",
+              // label do campo de seleção do filtro
+              "label": "Dissertação",
+              // operadores logicos utilizados pelo querybuilder
+              "operators": ["contains", "not_contains"],
+              // função usada pelo querybuilder para construir o input, definido em bv_querybuilder.js
+              "input": "autocomplete",
+              // parametro extras do autocomplete
+              "solr_params": {
+                // parametro do solr
+                "q" : "*:*",
+                // parametro do solr
+                "fl" : "*",
+                // numero de itens que aparecem na listagem de autocomplete
+                "rows": "20",
+                // campo de busca da query
+                "field": "TESE_DISSERTACAO_busca",
+
+                // campo que é usado para gerar lista de intes facetados no auto_com
+                "facet_field" : "TESE_DISSERTACAO_busca"
+
+               } ,
+              "type": "string"
+          },
+            {
+              "get_from_solr_field": "PROGRAMA_IES_busca",
+              "label": "Programa IES PT",
+              "operators": ["equal", "not_equal"],
+              "input": "autocomplete",
+              "solr_params": {
+                "q" : "*:*",
+                "fl" : "*",
+                "rows": "20",
+                "field": "PROGRAMA_IES_busca",
+                "facet_field" : "NM_PROGRAMA_IES_exact"
+
+               } ,
+              "type": "string"
+          },
+          /* {
+            "get_from_solr_field": "DS_RESUMO_busca",
+            "label": "Resumo PT",
+            "operators": ["equal", "not_equal"],
+            "input": "autocomplete",
+            "solr_params": {
+              "q" : "*:*",
+              "fl" : "*",
+              "rows": "20",
+              "field": "DS_RESUMO_busca",
+              "facet_field" : "DS_RESUMO_str_search"
+
+             } ,
+            "type": "string"
+        }, */
+        {
+          "get_from_solr_field": "PROGRAMA_IDIOMA_busca",
+          "label": "Programa Idioma EN",
+          "operators": ["equal", "not_equal"],
+          "input": "autocomplete",
+          "solr_params": {
+            "q" : "*:*",
+            "fl" : "*",
+            "rows": "20",
+            "field": "PROGRAMA_IDIOMA_busca",
+            "facet_field" : "NM_PROGRAMA_IDIOMA_exact"
+
+           } ,
+          "type": "string"
+      },
+      {
+        "get_from_solr_field": "ID_PESSOA_busca",
+        "label": "Cod Id Pessoa",
+        "operators": ["equal", "not_equal"],
+        "input": "autocomplete",
+        "solr_params": {
+          "q" : "*:*",
+          "fl" : "*",
+          "rows": "20",
+          "field": "ID_PESSOA_busca",
+          "facet_field" : "ID_PESSOA_busca_exact"
+
+         } ,
+        "type": "string"
+    },
+    {
+      "get_from_solr_field": "NM_ORIENTADOR_busca",
+      "label": "Nome Orientador",
+      "operators": ["equal", "not_equal"],
+      "input": "autocomplete",
+      "solr_params": {
+        "q" : "*:*",
+        "fl" : "*",
+        "rows": "20",
+        "field": "NM_ORIENTADOR_busca",
+        "facet_field" : "NM_ORIENTADOR_busca_exact"
+
+       } ,
+      "type": "string"
+  },
+  {
+    "get_from_solr_field": "CD_PROGRAMA_IES_busca",
+    "label": "Cod Programa Pós",
+    "operators": ["equal", "not_equal"],
+    "input": "autocomplete",
+    "solr_params": {
+      "q" : "*:*",
+      "fl" : "*",
+      "rows": "20",
+      "field": "CD_PROGRAMA_IES_busca",
+      "facet_field" : "CD_PROGRAMA_IES_busca_exact"
+
+     } ,
+    "type": "string"
+}
+
+    
+          ]
+    }
+}

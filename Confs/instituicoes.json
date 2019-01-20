@@ -1,0 +1,162 @@
+{
+  "COLLECTION":{
+        "label": "CAPES - Discentes",
+        /* "omite_secoes": ["refine", "busca", "documentos", "related_collections" ,"docs_snippet","pivot_table", "wordcloud","boxplot", "gather_nodes"], */
+        "omite_secoes": ["refine", "documentos", "related_collections" ,"pivot_table", "gather_nodes","boxplot","docs_snippet"],
+        "campo_dinamico_busca": "cross_collection_caged_discentes"
+  },
+
+  "FACETS":[
+            {"groupBy": {"id": "sobre", "label": "Sobre o ano base", "order": 1},
+              "facetGroup": [
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "AN_BASE", "label": "Ano de referência da coleta de dados"}]}
+             ]},
+            {"groupBy": {"id": "info_institu_vinc_prog", "label": "Informações da Instituição ", "order": 2},
+                "facetGroup": [
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "SG_ENTIDADE_ENSINO_Capes", "label": "Sigla da Instituição (Capes)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_ENTIDADE_ENSINO_Capes", "label": "Nome da Instituição (Capes)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "CD_INST_GEI", "label": "Código da Instituição(Fapesp-Gei)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "SG_INST_GEI", "label": "Sigla da Instituição(Fapesp-Gei)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_INST_GEI", "label": "Nome da Instituição(Fapesp-Gei)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "cat_insti", "label": "Tipo de Instituição(Fapesp-Gei)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "CS_STATUS_JURIDICO", "label": "Status Jurídico da Instituição(Capes)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "DS_DEPENDENCIA_ADMINISTRATIVA", "label": "Dependência Administrativa da Instituição(Capes)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "CS_Natureza_Juridica", "label": "Natureza jurídica da instituição(Fapesp-Gei)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "DS_ORGANIZACAO_ACADEMICA_Fapesp-Gei", "label": "Organização acadêmica da instituição(Fapesp-Gei)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "DS_ORGANIZACAO_ACADEMICA_Capes", "label": "Organização acadêmica da instituição(Capes)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "CD_Mantenedora", "label": "Código da Mantenedora da Instituição de Ensino(Inep)"}]},
+                    {"label": "", "render": "barChart_1",
+                    "facets": [{"chave": "NM_Mantenedora", "label": "Nome da Mantenedora da Instituição de Ensino(Inep)"}]}
+
+                 ]},
+
+
+
+    ],
+
+    "OUTCOMES": [
+        {"label": "Total de Instituições", "facet": {"id": ["*"]}, "docs": {}, "type": ["main"], "order": 1}
+
+    ],
+
+    "EXPORT_DATA":{
+      //"campos do solr que irao ser exportados em arquivo, fields devem ser docvalues"
+      "export_fields" : [
+              "AN_BASE",
+              "SG_ENTIDADE_ENSINO_Capes",
+              "NM_ENTIDADE_ENSINO_Capes",
+              "CD_INST_GEI",
+              "SG_INST_GEI",
+              "NM_INST_GEI",
+              "CAT_INST",
+              "CS_STATUS_JURIDICO",
+              "DS_DEPENDENCIA_ADMINISTRATIVA",
+              "CS_Natureza_Juridica",
+              "DS_ORGANIZACAO_ACADEMICA_Fapesp-GEI",
+              "DS_ORGANIZACAO_ACADEMICA_CAPES",
+              "CD_Mantenedora",
+              "NM_Mantenedora",
+
+         ],
+
+      //"campo usado para ordenar resultados"
+      "export_sort_by" : "AN_BASE" ,
+      //"campo usado para definir operador de ordenação"
+      "export_sort_op" : "desc",
+      //"limita numera maximo de documentos a serem exportados"
+        "max_rows" : 100000,
+      // "Caso haja um unico campo pre-gerado para relatorio com todos os dados em formato csv, indicar o nome do campo."
+      "report_field" : "",
+      // "Caso seja determinado um campo pre-gerado acima, pode-se listar o nome das colunas. Caso contrario as colunas irao sem nome."
+      "column_names": [],
+
+    // "Colunas extras para o caso de algum controle de acesso etc."
+    "extra_column_names" :[]
+    },
+
+   "SANKEY_CHART":{ /* cluster graph */
+      "default_level_1": {"value": "AN_BASE", "label": "Ano Base"},
+        "default_level_2": {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da Instituição(Capes)"},
+        //"default_level_3": {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da Instituição(Capes)"},
+        "options": [
+
+                    {"value": "NM_INST_GEI", "label": "Nome da Instituição(Fapesp-Gei)"},
+                    {"value": "CS_Natureza_Juridica", "label": "Natureza Jurídica da Instituição(Fapesp-Gei)"},
+                    {"value": "AN_BASE", "label": "Ano Base"},
+                    {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da Instituição(Capes)"},
+                    {"value": "DS_ORGANIZACAO_ACADEMICA_Capes", "label": "Organização acadêmica da instituição(Capes)"}
+
+
+                ]
+  },
+
+  "BUBBLE_CHART": {
+      "default_level_1": {"value": "cat_insti", "label": "Tipo de Instituição(Fapesp-Gei)"},
+        "default_level_2": {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da Instituição(Capes)"},
+        "default_level_3": {"value": "CS_Natureza_Juridica", "label": "Natureza Jurídica da Instituição(Fapesp-Gei)"},
+        "options": [
+              {"value": "NM_INST_GEI", "label": "Nome da Instituição(Fapesp-Gei)"},
+              {"value": "CS_Natureza_Juridica", "label": "Natureza Jurídica da Instituição(Fapesp-Gei)"},
+              {"value": "AN_BASE", "label": "Ano Base"},
+              {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da Instituição(Capes)"},
+              {"value": "DS_ORGANIZACAO_ACADEMICA_Capes", "label": "Organização acadêmica da instituição(Capes)"}
+
+                    ]
+  },
+
+ /* "BOXPLOT_CHART":{
+        "default_level_1": {"value": "NM_REGIAO", "label": "Região do Programa"},
+        "default_level_2": {"value": "V8005", "label": "Idade"},
+        "options_x": [
+            {"value": "NM_REGIAO", "label": "Região do Programa"}
+        ],
+        "options_y": [
+            {"value": "V8005", "label": "Idade"}
+        ]
+  }, */
+
+    "WORDCLOUD_CHART":{
+        "single_facet": {"value": "PROGRAMA_IES_nuvem_palavras", "label": "Programa IES PT"},
+          "options": [
+              {"value": "PROGRAMA_IES_nuvem_palavras", "label": "Programa IES PT"},
+              {"value": "TESE_DISSERTACAO_nuvem_palavras", "label": "Dissertação"},
+              {"value": "PROGRAMA_IDIOMA_nuvem_palavras", "label": "Programa idioma EN"}
+
+            ]
+    },
+
+    "MULTILEVEL_BARCHART_1":{/* stacked bar */
+        "default_level_1": "AN_BASE",
+        "default_level_2": "CS_STATUS_JURIDICO",
+
+        "y_axis": [{"value": "AN_BASE", "label": "Ano Base"},
+                    {"value": "NM_INST_GEI", "label": "Nome da Instituição(Fapesp-Gei)"},
+                    {"value": "CS_Natureza_Juridica", "label": "Natureza Jurídica da Instituição(Fapesp-Gei)"},
+                    {"value": "AN_BASE", "label": "Ano Base"},
+                    {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da Instituição(Capes)"},
+                    {"value": "DS_ORGANIZACAO_ACADEMICA_Capes", "label": "Organização acadêmica da instituição(Capes)"}
+
+                ],
+        "y_stratification": [{"value": "CS_Natureza_Juridica", "label": "Natureza Jurídica da Instituição(Fapesp-Gei)"},
+                    {"value": "NM_INST_GEI", "label": "Nome da Instituição(Fapesp-Gei)"},
+                    {"value": "CS_Natureza_Juridica", "label": "Natureza Jurídica da Instituição(Fapesp-Gei)"},
+                    {"value": "AN_BASE", "label": "Ano Base"},
+                    {"value": "CS_STATUS_JURIDICO", "label": "Status Jurídico da Instituição(Capes)"},
+                    {"value": "DS_ORGANIZACAO_ACADEMICA_Capes", "label": "Organização acadêmica da instituição(Capes)"}
+                ]
+    },
+
+}
